@@ -19,6 +19,8 @@ import java.util.stream.Collectors;
  * Input : 9 4 9 6 7 4
  * Output : 6
  *
+ * Source: https://www.geeksforgeeks.org/non-repeating-element/
+ *
  */
 public class NonRepeatingElement {
     public static void main(String[] args) {
