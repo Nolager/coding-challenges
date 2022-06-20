@@ -32,8 +32,10 @@ public class NonRepeatingElement {
 
         System.out.println("Simple solution: " + firstNonRepeatingSimple(numbers, numbers.length));
         System.out.println("Simple solution: " + firstNonRepeatingSimple(numbersTwo, numbersTwo.length));
+
         System.out.println("Efficient solution: " + firstNonRepeatingEfficient(numbers, numbers.length));
         System.out.println("Efficient solution: " + firstNonRepeatingEfficient(numbersTwo, numbersTwo.length));
+
         firstNonRepeatingMoreOptimized(numbers, numbers.length);
         firstNonRepeatingMoreOptimized(numbersTwo, numbersTwo.length);
 
