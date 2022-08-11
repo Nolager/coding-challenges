@@ -48,6 +48,6 @@ public class FindIntersection {
                     }
                 });
 
-        return String.join(",", output);
+        return String.join(",", output).replaceAll("\\s","");
     }
 }
