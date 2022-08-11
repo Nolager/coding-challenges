@@ -5,7 +5,6 @@ import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.stream.Collectors;
 
 /**
  * Find Intersection
@@ -38,9 +37,11 @@ public class FindIntersection {
         // code goes here
         Map<String, String> map = new HashMap<>();
         List<String> output = new ArrayList<>();
+        String returnedValue;
 
-        Arrays.stream(strArr[0].split(",")).forEach(number -> map.put(number, number));
-        Arrays.stream(strArr[1].split(","))
+        Arrays.stream(strArr[0].replaceAll("\\s","").split(","))
+                .forEach(number -> map.put(number, number));
+        Arrays.stream(strArr[1].replaceAll("\\s","").split(","))
                 .forEach(number -> {
 
                     if (map.get(number) != null) {
@@ -48,6 +49,8 @@ public class FindIntersection {
                     }
                 });
 
-        return String.join(",", output).replaceAll("\\s","");
+        returnedValue = (output.size() == 0) ? "false" : String.join(",", output);
+
+        return returnedValue;
     }
 }
