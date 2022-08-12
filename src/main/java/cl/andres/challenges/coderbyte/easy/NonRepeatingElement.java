@@ -1,4 +1,4 @@
-package cl.andres.challenges;
+package cl.andres.challenges.coderbyte.easy;
 
 import java.util.Arrays;
 import java.util.Collections;
