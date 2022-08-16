@@ -31,4 +31,11 @@ public class FirstReverse {
 
         return reverseString.toString();
     }
+
+    /**
+     * Solution from https://coderbyte.com/results/CEThompson:First%20Reverse:Java
+     */
+    String otherSolution(String str) {
+        return new StringBuilder(str).reverse().toString();
+    }
 }
