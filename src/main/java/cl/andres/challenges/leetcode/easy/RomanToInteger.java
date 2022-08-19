@@ -56,11 +56,11 @@ public class RomanToInteger {
     public static void main(String[] args) {
         romanNumerals.put("I", new RomanNumeral("I", 1, 3));
         romanNumerals.put("V", new RomanNumeral("V", 5, 0));
-        romanNumerals.put("X", new RomanNumeral("X", 10, 2));
+        romanNumerals.put("X", new RomanNumeral("X", 10, 3));
         romanNumerals.put("L", new RomanNumeral("L", 50, 0));
         romanNumerals.put("C", new RomanNumeral("C", 100, 3));
         romanNumerals.put("D", new RomanNumeral("D", 500, 0));
-        romanNumerals.put("M", new RomanNumeral("M", 1000, 2));
+        romanNumerals.put("M", new RomanNumeral("M", 1000, 3));
 
         System.out.println("" + romanToInt("CCCLII"));
     }
