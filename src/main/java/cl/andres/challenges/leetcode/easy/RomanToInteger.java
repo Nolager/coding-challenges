@@ -62,27 +62,28 @@ public class RomanToInteger {
         romanNumerals.put("D", new RomanNumeral("D", 500, 0));
         romanNumerals.put("M", new RomanNumeral("M", 1000, 2));
 
-        System.out.println("" + romanToInt("LVIII"));
+        System.out.println("" + romanToInt("CCCLII"));
     }
 
     public static int romanToInt(String s) {
         int value = 0;
         int repetitions = 0;
+        String reversedRomanNumeral = new StringBuilder(s).reverse().toString();
 
-        for (int i = 0; i < s.length(); i++) {
+        for (int i = reversedRomanNumeral.length()-1; i >= 0; i--) {
             RomanNumeral currentNumeral = romanNumerals.get(String.valueOf(s.charAt(i)));
 
             if (Objects.isNull(currentNumeral)) {
                 throw new IllegalArgumentException("Roman numeral not valid: " + s);
             }
 
-            if (i == 0) {
+            if (i == reversedRomanNumeral.length()-1) {
                 value = currentNumeral.getValue();
                 repetitions++;
                 continue;
             }
 
-            RomanNumeral previousNumeral = romanNumerals.get(String.valueOf(s.charAt(i-1)));
+            RomanNumeral previousNumeral = romanNumerals.get(String.valueOf(s.charAt(i+1)));
 
             if (currentNumeral.getValue() == previousNumeral.getValue() && repetitions >= currentNumeral.getMaxRepetition()) {
                 throw new IllegalArgumentException("Roman numeral not valid: " + s);
@@ -92,10 +93,10 @@ public class RomanToInteger {
                 value += currentNumeral.getValue();
                 repetitions++;
             } else if (currentNumeral.getValue() < previousNumeral.getValue()) {
-                value += currentNumeral.getValue();
+                value -= currentNumeral.getValue();
                 repetitions = 0;
             } else if (currentNumeral.getValue() > previousNumeral.getValue()) {
-                value = currentNumeral.getValue() - previousNumeral.getValue();
+                value += currentNumeral.getValue();
                 repetitions = 0;
             }
         }
